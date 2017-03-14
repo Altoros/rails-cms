@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @image.url %>
+  <strong>Photo:</strong>
+  <%= image_tag @image.photo.url(:square) %>
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
