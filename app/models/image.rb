@@ -11,4 +11,9 @@ class Image < ApplicationRecord
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  scope :to_shop,
+    -> (user) { joins(:pictures).
+                where("pictures.user_id != ?", user.id).
+                where("pictures.image_id not in (?)", user.images.ids) }
 end
