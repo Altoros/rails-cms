@@ -1,2 +1,22 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<%= link_to 'My Images', rails_admin_path %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Store</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td><%= image_tag image.photo.url(:square) %><td>
+        <td><%= link_to 'Buy', new_charge_path(image_id: image.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
