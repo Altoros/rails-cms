@@ -5,6 +5,8 @@ class ChargesController < ApplicationController
 
   def create
     image = Image.find_by(id: charge_params[:image_id])
+    @amount = image.price
+
     if image.price != charge_params[:price].to_f
       raise "The price does not match, please check and do it again"
     end
