@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170315163201) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "images", force: :cascade do |t|
     t.string   "name"
     t.string   "tags"
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 20170315163201) do
     t.integer  "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_pictures_on_image_id"
-    t.index ["user_id"], name: "index_pictures_on_user_id"
+    t.index ["image_id"], name: "index_pictures_on_image_id", using: :btree
+    t.index ["user_id"], name: "index_pictures_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,8 +49,8 @@ ActiveRecord::Schema.define(version: 20170315163201) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
