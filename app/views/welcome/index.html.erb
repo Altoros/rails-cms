@@ -3,6 +3,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Store</h1>
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= jwplayer_video_tag(video["key"]).html_safe %></td>
+        <td><%= link_to 'Buy', new_charge_path(video_id: video["key"]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <table>
   <thead>
     <tr>
