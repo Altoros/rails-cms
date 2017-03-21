@@ -81,6 +81,8 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -92,6 +94,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
+    jwplayer-api-client (0.1.0)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -110,6 +113,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    multi_xml (0.6.0)
     multipart-post (2.0.0)
     nested_form (0.3.2)
     nio4r (2.0.0)
@@ -224,8 +228,10 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   figaro (~> 1.1)
+  httparty (~> 0.14)
   jbuilder (~> 2.5)
   jquery-rails
+  jwplayer-api-client
   listen (~> 3.0.5)
   paperclip (~> 5.0)
   pg

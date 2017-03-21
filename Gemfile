@@ -8,8 +8,10 @@ end
 gem 'aws-sdk', '~> 2'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.2'
+gem 'httparty', '~> 0.14'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'jwplayer-api-client'
 gem "paperclip", "~> 5.0"
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.2'
