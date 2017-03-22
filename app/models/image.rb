@@ -1,6 +1,8 @@
 class Image < ApplicationRecord
-  has_many :pictures
+  has_many :pictures, dependent: :destroy, inverse_of: :image
   has_many :users, through: :pictures
+
+  validates_presence_of :name, :tags, :photo, :price, :users
 
   # This method associates the attribute ":photo" with a file attachment
   has_attached_file :photo, styles: {
