@@ -18,4 +18,8 @@ class Image < ApplicationRecord
     -> (user) { joins(:pictures).
                 where("pictures.user_id != ?", user.id).
                 where("pictures.image_id not in (?)", user.images.ids) }
+
+  scope :my_images,
+    -> (user) { joins(:pictures).
+                where("pictures.user_id = ?", user.id) }
 end

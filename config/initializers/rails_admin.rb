@@ -1,3 +1,5 @@
+require File.join(Rails.root, "lib", "rails_admin", "my_images")
+
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -27,8 +29,9 @@ RailsAdmin.config do |config|
 
   config.actions do
     dashboard                     # mandatory
+    my_images
     index do
-      except ['User']
+      except ['Image', 'User']
     end
     new do
       except ['User']

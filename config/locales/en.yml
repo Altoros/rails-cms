@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  admin:
+    actions:
+      my_images:
+        menu: 'List'
+        title: 'List'
+        breadcrumb: 'List'
